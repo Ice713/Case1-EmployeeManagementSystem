@@ -49,5 +49,9 @@ namespace Case1_EmployeeManagementSystem
             MessageBox.Show($"Employee ID: {EmployeeID}\nName: {Name}\nSalary: {Salary}");
         }
 
+        public override string ToString()
+        {
+            return $"{Name} (ID: {EmployeeID})";
+        }
     }
 }
