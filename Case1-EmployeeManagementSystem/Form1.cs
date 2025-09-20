@@ -20,12 +20,13 @@ namespace Case1_EmployeeManagementSystem
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Display employee details when an item is selected
-            if (listBox1.SelectedItem == null)
+            if (listBox1.SelectedIndex < 0)
                 return;
-            if (listBox1.SelectedItem is Employee selectedEmployee)
+            else if (listBox1.SelectedItem is Employee selectedEmployee)
             {
                 selectedEmployee.Display();
             }
+            else { }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,7 +39,7 @@ namespace Case1_EmployeeManagementSystem
                 {
                     new Employee("John Doe", 500000, 101),
                     new Employee("Alice Smith", 60000, 102),
-                    new Employee("", -10000, 103)
+                    // new Employee("", -10000, 103)
                 };
 
                 // Bind the list to the ListBox
